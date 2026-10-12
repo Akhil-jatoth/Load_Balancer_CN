@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  relay:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: relay-load-balancer
+    ports:
+      - "8000:8000"   # Control Plane Web Dashboard & REST/WebSocket API
+      - "8080:8080"   # Raw Socket TCP/HTTP Proxy Port
+      - "9001:9001"   # Demo Backend 1 (api-service-1)
+      - "9002:9002"   # Demo Backend 2 (api-service-2)
+      - "9003:9003"   # Demo Backend 3 (static-service-1)
+      - "9004:9004"   # Demo Backend 4 (static-service-2)
+    environment:
+      - API_PORT=8000
+      - PROXY_PORT=8080
+    restart: unless-stopped

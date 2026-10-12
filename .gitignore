@@ -1,0 +1,32 @@
+# Gradle
+.gradle/
+build/
+**/build/
+
+# Java
+*.class
+
+# SQLite Database & Runtime files
+relay.db
+*.db
+*.db-journal
+
+# Logs
+*.log
+logs/
+
+# Node
+node_modules/
+**/node_modules/
+
+# OS & IDE
+.DS_Store
+Thumbs.db
+.idea/
+*.iml
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
